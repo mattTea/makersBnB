@@ -1,5 +1,5 @@
 function Space() {
-  this.name = "";
+  this.name = "TBD";
 }
 
 Space.prototype = {
