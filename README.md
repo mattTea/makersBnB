@@ -179,3 +179,14 @@ I want the space to show as available until I confirm a booking
 ```sql
 CREATE TABLE users (ID SERIAL PRIMARY KEY, name VARCHAR(60), username VARCHAR(30), email VARCHAR(60), password VARCHAR(30));
 ```
+
+## Usage
+
+`npm install`     
+`node index.js`     
+ 
+Open `localhost:3000`
+
+## Running tests
+
+Open `SpecRunner.html`
