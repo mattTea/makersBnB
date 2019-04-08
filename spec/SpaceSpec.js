@@ -4,4 +4,11 @@ describe("Space", function() {
     space.addName("Fancy place in Kensington");
     expect(space.name).toEqual("Fancy place in Kensington");
   });
+
+  it("captures space description", function() {
+    var space = new Space;
+    space.addDescription("Some funny description");
+    expect(space.description).toEqual("Some funny description");
+  });
+
 });
