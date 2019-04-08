@@ -36,3 +36,66 @@ Mockups for MakersBnB are available [here](https://github.com/makersacademy/cour
 
 
 ![Tracking pixel](https://githubanalytics.herokuapp.com/course/makersbnb/specification_and_mockups.md)
+
+
+# Notes
+
+## MVP
+
+1. A user (no signing up just yet) can list a space
+2. A user can name their space, provide a short description of the space, and a price per night.
+3. (A user can list multiple spaces).
+
+
+## User stories
+
+1. List space
+
+As a person with a space,
+so that I can share details of it,
+I want to be able to list my space.
+
+Object | Messages
+--------------- | ---------------
+Person |
+Space | create (submit)
+
+
+2. Advertise space
+
+As a person with a space,
+so that I can advertise it,
+I want to be able to add a...
+
+2.a -> name
+
+Object | Messages
+--------------- | ---------------
+Person |
+Space | addName
+
+
+2.b -> description
+
+Object | Messages
+--------------- | ---------------
+Person |
+Space | addName
+Space | addDescription
+
+
+2.c -> price per night
+
+Object | Messages
+--------------- | ---------------
+Person |
+Space | addName
+Space | addDescription
+Space | addPrice
+
+
+## Technology decisions
+
+- JavaScript -> learning goals and likely to be interactive front-end
+- Jasmine testing framework
+
