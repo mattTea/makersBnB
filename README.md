@@ -62,11 +62,11 @@ Space | create (submit)
 
 
 2. Advertise space
-
+```
 As a person with a space,
 so that I can advertise it,
 I want to be able to add a...
-
+```
 2.a -> name
 
 Object | Messages
