@@ -168,3 +168,14 @@ I want the space to show as available until I confirm a booking
 
 - JavaScript -> learning goals and likely to be interactive front-end
 - Jasmine testing framework
+
+
+## Database set up
+
+- Create `pinkbnb` postgres db locally
+- Change login details in `queries.js`
+
+- To create `users` table...
+```sql
+CREATE TABLE users (ID SERIAL PRIMARY KEY, name VARCHAR(60), username VARCHAR(30), email VARCHAR(60), password VARCHAR(30));
+```
