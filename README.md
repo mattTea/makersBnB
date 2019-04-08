@@ -10,7 +10,7 @@ A web application that allows users to list spaces they have available, and to h
 - Users should be able to offer a range of dates where their space is available.
 - Any signed-up user can request to hire any space for one night, and this should be approved by the user that owns that space.
 - Nights for which a space has already been booked should not be available for users to book that space.
-- Until a user has confirmed a booking request, that space can still be booked for that night.
+- Until a user has confirmed a booking request, that space can still be request for that night.
 
 ### Nice-to-haves
 
@@ -49,11 +49,13 @@ Mockups for MakersBnB are available [here](https://github.com/makersacademy/cour
 
 ## User stories
 
-1. List space
+1. List space (create listing)
 
-As a person with a space,
-so that I can share details of it,
+```
+As a host,
+So that I can share details of my space,
 I want to be able to list my space.
+```
 
 Object | Messages
 --------------- | ---------------
@@ -63,11 +65,11 @@ Space | create (submit)
 
 2. Advertise space
 ```
-As a person with a space,
-so that I can advertise it,
+As a host,
+so that I can advertise my space,
 I want to be able to add a...
 ```
-2.a -> name
+2.a -> ```name```
 
 Object | Messages
 --------------- | ---------------
@@ -75,7 +77,7 @@ Person |
 Space | addName
 
 
-2.b -> description
+2.b -> ```description```
 
 Object | Messages
 --------------- | ---------------
@@ -84,7 +86,7 @@ Space | addName
 Space | addDescription
 
 
-2.c -> price per night
+2.c -> ```price per night```
 
 Object | Messages
 --------------- | ---------------
@@ -93,9 +95,76 @@ Space | addName
 Space | addDescription
 Space | addPrice
 
+3. Multiple spaces
+
+```
+As a host with multiple spaces,
+So that I can offer all of them
+I want to be able to list multiple spaces
+```
+
+4. Host sign up
+
+```
+As a host,
+So that users know it's my space
+I want to be able to sign up
+```
+
+5. Guest signup
+
+```
+As a guest,
+So that I can require to hire a space
+I want to be able to sign up
+```
+
+6. Range of dates
+
+```
+As a host,
+So that I can share when the space is available
+I want to be able to offer a range of dates
+```
+
+7. Guest request space
+
+```
+As a guest,
+So that I can go on holiday
+I want to request a space for a night
+```
+
+8. Host can approve space
+
+```
+As a host,
+So that I can manage my space,
+I want to be able to approve a booking request
+```
+
+9. Availability update
+
+```
+As a host,
+So that I don't double book the space
+I want to show only available dates
+```
+
+```
+As a guest,
+So that I only see places that I can book
+I want to see only available spaces
+```
+
+```
+As a host,
+So that I have more change of filling my space
+I want the space to show as available until I confirm a booking
+```
+
 
 ## Technology decisions
 
 - JavaScript -> learning goals and likely to be interactive front-end
 - Jasmine testing framework
-
