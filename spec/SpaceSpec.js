@@ -11,4 +11,10 @@ describe("Space", function() {
     expect(space.description).toEqual("Some funny description");
   });
 
+  it("captures space price per night", function() {
+    var space = new Space;
+    space.addPrice(100);
+    expect(space.price).toEqual(100);
+  });
+
 });

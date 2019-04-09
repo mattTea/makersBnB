@@ -1,6 +1,7 @@
 function Space() {
   this.name = "TBD";
   this.description = "TBD";
+  this.price = 0;
 }
 
 Space.prototype = {
@@ -11,5 +12,9 @@ Space.prototype = {
   addDescription: function(description) {
     this.description = description;
   },
+
+  addPrice: function(price) {
+    this.price = price;
+  }
 
 }
