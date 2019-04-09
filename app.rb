@@ -23,6 +23,7 @@ class PinkBnB < Sinatra::Base
     User.create(name: params[:name], username: params[:username],
       email: params[:email], password: params[:password])
     redirect 'users'
+  end
 
   get '/space' do
     @spaces = Space.all

@@ -10,15 +10,15 @@ require 'rubocop'
 
 Capybara.app = PinkBnB
 
-RSpec.configure do |config|
-  config.before(:each) do
-    setup_test_database
-  end
-end
+# RSpec.configure do |config|
+#   config.before(:each) do
+#     setup_test_database
+#   end
+# end
 
 RSpec.configure do |config|
   config.before(:each) do |config|
-    # setup_test_database
+    setup_test_database
   end
   config.include Capybara::DSL
   config.after(:suite) do
