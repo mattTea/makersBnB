@@ -15,4 +15,14 @@ describe DatabaseConnection do
     end
 
   end
+
+  describe '.query' do
+    it 'runs an SQL query via PG' do
+      connection = DatabaseConnection.setup('pinkbnb_test')
+
+      expect(connection).to receive(:exec).with('SELECT * FROM spaces;')
+
+      DatabaseConnection.query('SELECT * FROM spaces;')
+    end
+  end
 end
