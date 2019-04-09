@@ -15,4 +15,9 @@ $(document).ready(function() {
     $('#description').text(space.description);
   });
 
+  $('#submit-price').click(function() {
+    space.addPrice($('#space-price-per-night').val());
+    $('#price-per-night').text(`£${space.price}`);
+  }); 
+
 })
