@@ -172,19 +172,34 @@ I want the space to show as available until I confirm a booking
 
 ## Database set up
 
+- Open PSQL
 - Create `pinkbnb` postgres db locally
-- Change login details in `queries.js`
+```
+db/migrations/01_create_pinkbnb_db.sql
+```
+- `\c pinkbnb` to connect to database
 
 - To create `users` table...
-```sql
-CREATE TABLE users (ID SERIAL PRIMARY KEY, name VARCHAR(60), username VARCHAR(30), email VARCHAR(60), password VARCHAR(30));
+```
+db/migrations/02_create_users_table.sql
+```
+- Change login details in `queries.js`
+
+- Create test database
+```
+db/migrations/03_create_pinkbnb_test_db.sql
+```
+- `\c pinkbnb_test` to connect to test database
+- Create table
+```
+db/migrations/04_create_test_users_table.sql
 ```
 
 ## Usage
 
 `npm install`     
 `node index.js`     
- 
+
 Open `localhost:3000`
 
 ## Running tests
