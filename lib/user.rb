@@ -18,8 +18,18 @@ class User
     else
       connection = PG.connect(dbname: 'pinkbnb')
     end
-    result = connection.exec("INSERT INTO users (name, username, email, password) VALUES ('#{name}', '#{username}', '#{email}', '#{password}') RETURNING id, name, username, email, password;")
-    User.new(id: result[0]['id'], name: result[0]['name'], username: result[0]['username'], email: result[0]['email'], password: result[0]['password'])
+    result = connection.exec(
+      "INSERT INTO users (name, username, email, password)
+      VALUES ('#{name}', '#{username}', '#{email}', '#{password}')
+      RETURNING id, name, username, email, password;"
+    )
+    User.new(
+      id: result[0]['id'],
+      name: result[0]['name'],
+      username: result[0]['username'],
+      email: result[0]['email'],
+      password: result[0]['password']
+    )
   end
 
   def self.all
@@ -39,5 +49,5 @@ class User
       )
     end
 
-   end
+  end
 end

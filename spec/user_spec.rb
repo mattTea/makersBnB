@@ -3,7 +3,7 @@ require 'user'
 describe User do
 
   describe "#create" do
-    it ('creates a new user') do
+    it('creates a new user') do
       user = User.create(name: 'Person1', username: 'person1',
         email: 'person1@test.com', password: 'password1')
 
@@ -15,8 +15,8 @@ describe User do
   end
 
   describe "#all" do
-    it ('displays all users') do
-      user = User.create(name: 'Person1', username: 'person1',
+    it('displays all users') do
+      User.create(name: 'Person1', username: 'person1',
         email: 'person1@test.com', password: 'password1')
 
       expect(User.all[0].name).to eq 'Person1'
