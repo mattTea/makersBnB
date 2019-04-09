@@ -119,6 +119,16 @@ So that I can require to hire a space
 I want to be able to sign up
 ```
 
+**HERE at end of TUESDAY**
+
+10. User login
+
+```
+As a user...
+so that my activities are private to me
+I want to be able to login to manage my bookings
+```
+
 6. Range of dates
 
 ```
@@ -166,8 +176,9 @@ I want the space to show as available until I confirm a booking
 
 ## Technology decisions
 
-- JavaScript -> learning goals and likely to be interactive front-end
-- Jasmine testing framework
+- Ruby
+- Rspec
+- Capybara
 
 
 ## Database set up
