@@ -1,5 +1,7 @@
 require_relative './database_connection_setup'
 require 'sinatra/base'
+
+require './lib/user'
 require './lib/space'
 
 class PinkBnB < Sinatra::Base
@@ -7,6 +9,20 @@ class PinkBnB < Sinatra::Base
   get '/' do
     "Hello world"
   end
+
+  get '/users' do
+    @users = User.all
+    erb :users
+  end
+
+  get '/users/new' do
+    erb :new_user
+  end
+
+  post '/users/new' do
+    User.create(name: params[:name], username: params[:username],
+      email: params[:email], password: params[:password])
+    redirect 'users'
 
   get '/space' do
     @spaces = Space.all
