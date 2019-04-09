@@ -1,3 +1,4 @@
+require_relative './database_connection_setup'
 require 'sinatra/base'
 require './lib/space'
 
