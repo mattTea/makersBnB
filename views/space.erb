@@ -1,0 +1,11 @@
+<form action="/space" method="post">
+  <input type="text" name="name" placeholder="Name">
+  <input type="text" name="description" placeholder="Description">
+  <input type="price" name="price_per_night" placeholder="Price per night">
+  <input type="submit" value="Add">
+</form>
+<% @spaces.each do |space| %>
+  Name: <%= space.name %><br>
+  Description: <%= space.description %><br>
+  Price per night: <%= space.price %>
+<% end %>
