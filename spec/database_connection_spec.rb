@@ -7,5 +7,12 @@ describe DatabaseConnection do
 
       DatabaseConnection.setup('pinkbnb_test')
     end
+
+    it 'has a persistent connection' do
+      connection = DatabaseConnection.setup('pinkbnb_test')
+
+      expect(DatabaseConnection.connection).to eq connection
+    end
+
   end
 end
