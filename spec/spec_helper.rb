@@ -1,5 +1,7 @@
 ENV['RACK_ENV'] = 'test'
 
+require_relative 'setup_test_database'
+
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 require 'capybara/rspec'
@@ -7,6 +9,12 @@ require 'rubocop'
 # require_relative './setup_test_database'
 
 Capybara.app = PinkBnB
+
+RSpec.configure do |config|
+  config.before(:each) do
+    setup_test_database
+  end
+end
 
 RSpec.configure do |config|
   config.before(:each) do |config|
