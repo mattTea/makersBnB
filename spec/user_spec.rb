@@ -28,4 +28,14 @@ describe User do
       expect(User.all[0].name).to eq 'Person1'
     end
   end
+
+  describe "#authenticate" do
+    it "returns a user given a correct username, if one exists" do
+      user = User.create(name: 'Matt', username: 'matt1',
+        email: 'matt1@test.com', password: 'password1')
+
+      authenticated_user = User.authenticate(username: 'matt1', password: 'password1')
+      expect(authenticated_user.id).to eq user.id
+    end
+  end
 end

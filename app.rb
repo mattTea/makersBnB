@@ -7,7 +7,7 @@ require './lib/space'
 class PinkBnB < Sinatra::Base
 
   get '/' do
-    "Hello world"
+    erb :homepage
   end
 
   get '/users' do
