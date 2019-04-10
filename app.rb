@@ -5,6 +5,7 @@ require './lib/user'
 require './lib/space'
 
 class PinkBnB < Sinatra::Base
+  enable :sessions
 
   get '/' do
     erb :homepage
@@ -20,12 +21,14 @@ class PinkBnB < Sinatra::Base
   end
 
   post '/users/new' do
-    User.create(name: params[:name], username: params[:username],
+    user = User.create(name: params[:name], username: params[:username],
       email: params[:email], password: params[:password])
-    redirect 'users'
+    session[:user_id] = user.id
+    redirect '/space'
   end
 
   get '/space' do
+    @user = User.find(id: session[:user_id])
     @spaces = Space.all
     erb :space
   end

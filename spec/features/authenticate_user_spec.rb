@@ -1,4 +1,4 @@
-xfeature "Authenticate User" do
+feature "Authenticate User" do
   scenario "user can login to pink BnB" do
     user = User.create(
       name: "George",
@@ -10,6 +10,6 @@ xfeature "Authenticate User" do
     fill_in("username", with: "georgie")
     fill_in("password", with: "password123")
     click_button("Login")
-    expect(page).to have_content("Welcome back")
+    expect(page).to have_content("Welcome")
   end
 end

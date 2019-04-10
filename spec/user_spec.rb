@@ -29,6 +29,20 @@ describe User do
     end
   end
 
+  describe "#find" do
+    it "retrieves a user given an id" do
+      user = User.create(name: 'Matt', username: 'matt1',
+        email: 'matt1@test.com', password: 'password1')
+      result = User.find(id: user.id)
+      expect(result.id).to eq user.id
+      expect(result.username).to eq user.username
+    end
+
+    it "returns nil if no id given" do
+      expect(User.find(id: nil)).to eq nil
+    end
+  end
+
   describe "#authenticate" do
     it "returns a user given a correct username, if one exists" do
       user = User.create(name: 'Matt', username: 'matt1',
