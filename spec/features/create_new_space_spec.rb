@@ -7,8 +7,8 @@ feature 'create new space' do
       password: "password123"
     )
     visit "/"
-    fill_in("loginusername", with: "georgie")
-    fill_in("loginpassword", with: "password123")
+    fill_in("login_username", with: "georgie")
+    fill_in("login_password", with: "password123")
     click_button("Login")
     click_button("Add space")
     fill_in('name', with: 'Hilton')
@@ -28,8 +28,8 @@ feature 'create new space' do
       password: "password123"
     )
     visit "/"
-    fill_in("loginusername", with: "georgie")
-    fill_in("loginpassword", with: "password123")
+    fill_in("login_username", with: "georgie")
+    fill_in("login_password", with: "password123")
     click_button("Login")
     click_button("Add space")
     fill_in('name', with: 'Hilton')
