@@ -1,9 +1,18 @@
 require 'space'
+require 'user'
 
 describe Space do
+  let(:user) { double :user }
+
   describe '.create' do
     it 'can store a new space in the database' do
-      space = Space.create(name: "Hilton", description: "Posh hotel", price: 100)
+      user = User.create(
+        name: "George",
+        username: "georgie",
+        email: "georgie@com",
+        password: "password123"
+      )
+      space = Space.create(name: "Hilton", description: "Posh hotel", price: 100, user_id: user.id)
 
       expect(space).to be_a Space
       expect(space.name).to eq "Hilton"
@@ -14,9 +23,15 @@ describe Space do
 
   describe '.all' do
     it 'returns all spaces in the database' do
-      Space.create(name: "Hilton", description: "Posh hotel", price: 100)
-      Space.create(name: "Travelodge", description: "Less posh hotel", price: 50)
-      Space.create(name: "Evelyn house", description: "Lovely place", price: 200)
+      user = User.create(
+        name: "George",
+        username: "georgie",
+        email: "georgie@com",
+        password: "password123"
+      )
+      Space.create(name: "Hilton", description: "Posh hotel", price: 100, user_id: user.id)
+      Space.create(name: "Travelodge", description: "Less posh hotel", price: 50, user_id: user.id)
+      Space.create(name: "Evelyn house", description: "Lovely place", price: 200, user_id: user.id)
 
       spaces = Space.all
 

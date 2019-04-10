@@ -47,9 +47,13 @@ class PinkBnB < Sinatra::Base
     erb :space
   end
 
-  post '/space' do
-    Space.create(name: params[:name], description: params[:description], price: params[:price_per_night])
+  post '/space/new' do
+    Space.create(name: params[:name], description: params[:description], price: params[:price_per_night], user_id: session[:user_id])
     redirect '/space'
+  end
+
+  get '/space/new' do
+    erb :new_space
   end
 
   run! if app_file == $0
