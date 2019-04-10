@@ -1,3 +1,17 @@
 body {
   background-color: lightpink;
 }
+
+.page-header {
+  color: white;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  margin: 20px auto;
+}
+
+h1 {
+  display: inline;
+  border-style: inset;
+}
