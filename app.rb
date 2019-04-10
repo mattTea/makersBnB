@@ -15,9 +15,9 @@ class PinkBnB < Sinatra::Base
     erb :users
   end
 
-  get '/users/new' do
-    erb :new_user
-  end
+  # get '/users/new' do
+  #   erb :new_user
+  # end
 
   post '/users/new' do
     User.create(name: params[:name], username: params[:username],
