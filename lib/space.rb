@@ -1,6 +1,3 @@
-require 'pg'
-require 'database_connection'
-
 class Space
 
   attr_reader :id, :name, :description, :price
