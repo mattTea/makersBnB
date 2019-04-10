@@ -1,26 +1,38 @@
-<div>
-  <% if @user %>
-    <h1>Where do you want to stay, <%= @user.name.capitalize %>?</h1>
-  <% end %>
-</div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title>PinkBnB</title>
+  </head>
 
-<div>
-  <% @spaces.each do |space| %>
-    <h4>Name: <%= space.name %></h4>
-    <p>Description: <%= space.description %></p>
-    <p>Price per night: <%= space.price %></p>
-    <% @possible_hosts.each do |host| %>
-      <% if host.id == space.user_id %>
-      <p>Host: <%= host.username %></p>
+  <body>
+  <div>
+    <% if @user %>
+      <h1>Where do you want to stay, <%= @user.name.capitalize %>?</h1>
+    <% end %>
+  </div>
+
+  <div>
+    <% @spaces.each do |space| %>
+      <h4>Name: <%= space.name %></h4>
+      <p>Description: <%= space.description %></p>
+      <p>Price per night: <%= space.price %></p>
+      <% @possible_hosts.each do |host| %>
+        <% if host.id == space.user_id %>
+        <p>Host: <%= host.username %></p>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-</div>
+  </div>
 
-<form action="/sessions/destroy" method="post">
-  <input type="submit" value="Logout">
-</form>
+  <form action="/sessions/destroy" method="post">
+    <input type="submit" value="Logout">
+  </form>
 
-<form action="/spaces/new">
-  <input type="submit" value="Add space">
-</form>
+  <form action="/spaces/new">
+    <input type="submit" value="Add space">
+  </form>
+
+  </body>
+</html>
