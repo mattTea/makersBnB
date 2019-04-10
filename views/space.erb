@@ -1,3 +1,7 @@
+<% if @user %>
+<%= "Welcome back" %>
+<% end %>
+
 <form action="/space" method="post">
   <input type="text" name="name" placeholder="Name">
   <input type="text" name="description" placeholder="Description">
@@ -9,3 +13,7 @@
   Description: <%= space.description %><br>
   Price per night: <%= space.price %>
 <% end %>
+
+<form action="/sessions/destroy" method="post">
+  <input type="submit" value="Logout">
+</form>

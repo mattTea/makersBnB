@@ -7,6 +7,6 @@ describe('Feature') do
     fill_in('password', with: 'password1')
     click_button('Submit')
 
-    expect(page).to have_content 'Person1'
+    expect(page).to have_content 'Welcome'
   end
 end
