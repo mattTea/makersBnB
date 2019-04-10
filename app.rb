@@ -25,6 +25,7 @@ class PinkBnB < Sinatra::Base
       redirect '/space'
     else
       flash[:notice] = "Please check your username and password"
+      redirect '/'
     end
   end
 
