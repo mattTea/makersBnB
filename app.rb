@@ -32,6 +32,12 @@ class PinkBnB < Sinatra::Base
     end
   end
 
+  post '/sessions/destroy' do
+    session.clear
+    flash[:notice] = "See you next time"
+    redirect '/'
+  end
+
   post '/users/new' do
     user = User.create(name: params[:name], username: params[:username],
       email: params[:email], password: params[:password])

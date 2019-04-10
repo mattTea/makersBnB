@@ -129,6 +129,14 @@ so that my activities are private to me
 I want to be able to login to manage my bookings
 ```
 
+11. User logout
+
+```
+As a user...
+So that my details are secure
+I want to be able to logout
+```
+
 6. Range of dates
 
 ```
