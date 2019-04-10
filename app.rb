@@ -41,7 +41,7 @@ class PinkBnB < Sinatra::Base
     @user = User.find(id: session[:user_id])
     @possible_hosts = User.all
     @spaces = Space.all
-    erb :space
+    erb :'spaces/index'
   end
 
   post '/spaces/new' do
@@ -50,7 +50,7 @@ class PinkBnB < Sinatra::Base
   end
 
   get '/spaces/new' do
-    erb :new_space
+    erb :'spaces/new'
   end
 
   run! if app_file == $0
