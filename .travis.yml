@@ -11,3 +11,4 @@ before_script:
   - psql -c 'create database pinkbnb_test;' -U postgres
   - psql pinkbnb_test -U postgres -c 'CREATE TABLE users (ID SERIAL PRIMARY KEY, name VARCHAR(60), username VARCHAR(30), email VARCHAR(60), password VARCHAR(30));'
   - psql pinkbnb_test -U postgres -c 'CREATE TABLE spaces (ID SERIAL PRIMARY KEY, name VARCHAR(100), description VARCHAR(400), price_per_night MONEY);'
+  - psql pinkbnb_test -U postgres -c 'ALTER TABLE users ALTER COLUMN password TYPE VARCHAR(140);'
