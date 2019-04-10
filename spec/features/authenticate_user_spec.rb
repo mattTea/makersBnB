@@ -10,7 +10,7 @@ feature "Authenticate User" do
     fill_in("login_username", with: "georgie")
     fill_in("login_password", with: "password123")
     click_button("Login")
-    expect(page).to have_content("Welcome")
+    expect(page).to have_content("Where do you want to stay, George?")
   end
 
   scenario "user sees error when incorrect password entered" do

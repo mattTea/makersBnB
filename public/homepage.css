@@ -63,7 +63,11 @@ h1 {
   width: 300px;
 }
 
-.notAMember{
+.notAMember {
+  color: white;
+}
+
+.member {
   color: white;
 }
 
