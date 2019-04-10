@@ -15,28 +15,24 @@ A web application that allows users to list spaces they have available, and to h
 ### Nice-to-haves
 
 - Users should receive an email whenever one of the following happens:
- - They sign up
- - They create a space
- - They update a space
- - A user requests to book their space
- - They confirm a request
- - They request to book a space
- - Their request to book a space is confirmed
- - Their request to book a space is denied
+  - They sign up
+  - They create a space
+  - They update a space
+  - A user requests to book their space
+  - They confirm a request
+  - They request to book a space
+  - Their request to book a space is confirmed
+  - Their request to book a space is denied
 - Users should receive a text message to a provided number whenever one of the following happens:
- - A user requests to book their space
- - Their request to book a space is confirmed
- - Their request to book a space is denied
+  - A user requests to book their space
+  - Their request to book a space is confirmed
+  - Their request to book a space is denied
 - A ‘chat’ functionality once a space has been booked, allowing users whose space-booking request has been confirmed to chat with the user that owns that space
 - Basic payment implementation though Stripe.
 
 ### Mockups
 
 Mockups for MakersBnB are available [here](https://github.com/makersacademy/course/blob/master/makersbnb/makers_bnb_images/MakersBnB_mockups.pdf).
-
-
-![Tracking pixel](https://githubanalytics.herokuapp.com/course/makersbnb/specification_and_mockups.md)
-
 
 # Notes
 
@@ -45,7 +41,6 @@ Mockups for MakersBnB are available [here](https://github.com/makersacademy/cour
 1. A user (no signing up just yet) can list a space
 2. A user can name their space, provide a short description of the space, and a price per night.
 3. (A user can list multiple spaces).
-
 
 ## User stories
 
@@ -119,8 +114,6 @@ So that I can require to hire a space
 I want to be able to sign up
 ```
 
-**HERE at end of TUESDAY**
-
 10. User login
 
 ```
@@ -136,6 +129,8 @@ As a user...
 So that my details are secure
 I want to be able to logout
 ```
+
+**HERE at end of WEDNESDAY**
 
 6. Range of dates
 
@@ -188,39 +183,21 @@ I want the space to show as available until I confirm a booking
 - Rspec
 - Capybara
 
-
 ## Database set up
 
 - Open PSQL
 - Create `pinkbnb` postgres db locally
-```
-db/migrations/01_create_pinkbnb_db.sql
-```
-- `\c pinkbnb` to connect to database
-
-- To create `users` table...
-```
-db/migrations/02_create_users_table.sql
-```
-- Change login details in `queries.js`
-
-- Create test database
-```
-db/migrations/03_create_pinkbnb_test_db.sql
-```
-- `\c pinkbnb_test` to connect to test database
-- Create table
-```
-db/migrations/04_create_test_users_table.sql
-```
+- Create `pinkbnb_test` postgres db locally
+- Run queries in db/migrations folder
 
 ## Usage
 
-`npm install`     
-`node index.js`     
+`git clone https://github.com/mattTea/makersBnB`     
+`gem install bundle`     
+`bundle install`     
 
-Open `localhost:3000`
+In Command Line, run `ruby app.rb` and open `localhost:4567`
 
 ## Running tests
 
-Open `SpecRunner.html`
+`rspec`
