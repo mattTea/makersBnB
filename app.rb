@@ -13,16 +13,11 @@ class PinkBnB < Sinatra::Base
     erb :homepage
   end
 
-  get '/users' do
-    @users = User.all
-    erb :users
-  end
-
   post '/sessions' do
     user = User.authenticate(username: params[:loginusername], password: params[:loginpassword])
     if user
       session[:user_id] = user.id
-      redirect '/space'
+      redirect '/spaces'
     else
       flash[:notice] = "Please check your username and password"
       redirect '/'
@@ -39,22 +34,22 @@ class PinkBnB < Sinatra::Base
     user = User.create(name: params[:signupname], username: params[:signupusername],
       email: params[:signupemail], password: params[:signuppassword])
     session[:user_id] = user.id
-    redirect '/space'
+    redirect '/spaces'
   end
 
-  get '/space' do
+  get '/spaces' do
     @user = User.find(id: session[:user_id])
     @possible_hosts = User.all
     @spaces = Space.all
     erb :space
   end
 
-  post '/space/new' do
+  post '/spaces/new' do
     Space.create(name: params[:name], description: params[:description], price: params[:price_per_night], user_id: session[:user_id])
-    redirect '/space'
+    redirect '/spaces'
   end
 
-  get '/space/new' do
+  get '/spaces/new' do
     erb :new_space
   end
 
