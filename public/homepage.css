@@ -29,6 +29,7 @@ h1 {
   cursor: pointer;
   position: absolute;
   left: 100px;
+  bottom: 10px;
   width: 300px;
 }
 
@@ -39,4 +40,19 @@ h1 {
   position: absolute;
   right: 100px;
   width: 300px;
+}
+
+.form-details {
+  margin: 4px 2px;
+}
+
+.sign-up-form {
+  position: absolute;
+  left: 200px;
+  bottom: 400px;
+  width: 300px;
+}
+
+.notAMember{
+  color: white;
 }

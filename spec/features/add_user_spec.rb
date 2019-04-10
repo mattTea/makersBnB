@@ -1,6 +1,6 @@
 describe('Feature') do
   it('captures user details') do
-    visit('/users/new')
+    visit('/')
     fill_in('name', with: 'Person1')
     fill_in('username', with: 'person1')
     fill_in('email', with: 'person1@test.com')
