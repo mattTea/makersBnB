@@ -54,7 +54,9 @@ class User
   end
 
   def self.authenticate(username:, password:)
+    p username
     result = DatabaseConnection.query("SELECT * FROM users WHERE username = '#{username}'")
+    p result
     return unless BCrypt::Password.new(result[0]['password']) == password
     User.new(
       id: result[0]['id'],
