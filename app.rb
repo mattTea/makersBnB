@@ -44,6 +44,7 @@ class PinkBnB < Sinatra::Base
 
   get '/space' do
     @user = User.find(id: session[:user_id])
+    @possible_hosts = User.all
     @spaces = Space.all
     erb :space
   end

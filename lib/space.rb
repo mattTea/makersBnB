@@ -7,7 +7,7 @@ class Space
     @name = name
     @description = description
     @price = price
-    @user_id
+    @user_id = user_id
   end
 
   def self.create(name:, description:, price:, user_id:)
@@ -33,7 +33,7 @@ class Space
         name: space['name'],
         description: space['description'],
         price: space['price_per_night'],
-        user_id: result[0]['user_id']
+        user_id: space['user_id']
       )
     end
   end

@@ -6,7 +6,11 @@
   Name: <%= space.name %><br>
   Description: <%= space.description %><br>
   Price per night: <%= space.price %><br>
-  Host: <%= @user.username %>
+  <% @possible_hosts.each do |host| %>
+    <% if host.id == space.user_id %>
+    Host: <%= host.username %>
+    <% end %>
+  <% end %>
 <% end %>
 
 <form action="/sessions/destroy" method="post">
