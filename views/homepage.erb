@@ -1,4 +1,6 @@
-<form action="/users/new" method="post">
+<%= flash[:notice] %>
+
+<form action="/sessions" method="post">
   <label>Username: </label><input type="text" name="username" placeholder="Username">
   <label>Password: </label><input type="text" name="password" placeholder="Password">
   <input type="submit" value="Login">
