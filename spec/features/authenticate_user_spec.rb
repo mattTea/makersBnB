@@ -7,8 +7,8 @@ feature "Authenticate User" do
       password: "password123"
     )
     visit "/"
-    fill_in("username", with: "georgie")
-    fill_in("password", with: "password123")
+    fill_in("loginusername", with: "georgie")
+    fill_in("loginpassword", with: "password123")
     click_button("Login")
     expect(page).to have_content("Welcome")
   end
@@ -21,8 +21,8 @@ feature "Authenticate User" do
       password: "password123"
     )
     visit "/"
-    fill_in("username", with: "georgie")
-    fill_in("password", with: "password12345")
+    fill_in("loginusername", with: "georgie")
+    fill_in("loginpassword", with: "password12345")
     click_button("Login")
     expect(page).to have_content "Please check your username and password"
   end
@@ -35,8 +35,8 @@ feature "Authenticate User" do
       password: "password123"
     )
     visit "/"
-    fill_in("username", with: "georgie")
-    fill_in("password", with: "password123")
+    fill_in("loginusername", with: "georgie")
+    fill_in("loginpassword", with: "password123")
     click_button("Login")
     click_button("Logout")
     expect(page).to have_content "See you next time"

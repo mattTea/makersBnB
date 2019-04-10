@@ -18,12 +18,8 @@ class PinkBnB < Sinatra::Base
     erb :users
   end
 
-  get '/users/new' do
-    erb :new_user
-  end
-
   post '/sessions' do
-    user = User.authenticate(username: params[:username], password: params[:password])
+    user = User.authenticate(username: params[:loginusername], password: params[:loginpassword])
     if user
       session[:user_id] = user.id
       redirect '/space'
@@ -39,8 +35,8 @@ class PinkBnB < Sinatra::Base
   end
 
   post '/users/new' do
-    user = User.create(name: params[:name], username: params[:username],
-      email: params[:email], password: params[:password])
+    user = User.create(name: params[:signupname], username: params[:signupusername],
+      email: params[:signupemail], password: params[:signuppassword])
     session[:user_id] = user.id
     redirect '/space'
   end

@@ -1,7 +1,51 @@
-<%= flash[:notice] %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PinkBNB</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+  </head>
+  <body>
+    <%= flash[:notice] %>
 
-<form action="/sessions" method="post">
-  <label>Username: </label><input type="text" name="username" placeholder="Username">
-  <label>Password: </label><input type="text" name="password" placeholder="Password">
-  <input type="submit" value="Login">
-</form>
+    <div class="page-header">
+      <h1>Pink BNB</h1>
+    </div>
+
+    <div class="sign-up-form">
+
+    <form action="/users/new" method="post" <label class="notAMember" for="form-details">Not a member? Sign Up</label>
+      <div class="form-details">
+      <input type="text" name="signupname" placeholder="Enter name">
+      </div>
+
+      <div class="form-details">
+        <input type="text" name="signupusername" placeholder="Enter username">
+      </div>
+
+      <div class="form-details">
+        <input type="text" name="signupemail" placeholder="Enter email">
+      </div>
+
+      <div class="form-details">
+        <input type="password" name="signuppassword" placeholder="Password">
+      </div>
+      <input type="submit" value="Submit">
+    </form>
+
+    </div>
+
+    <div class="log-in">
+      Log in Button goes here
+    </div>
+
+  <form action="/sessions" method="post">
+    <label>Username: </label><input type="text" name="loginusername" placeholder="Username">
+    <label>Password: </label><input type="text" name="loginpassword" placeholder="Password">
+    <input type="submit" value="Login">
+  </form>
+
+  </body>
+</html>
