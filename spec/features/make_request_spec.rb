@@ -1,4 +1,4 @@
-xfeature "Make request" do
+feature "Make request" do
   scenario "user request a space for a date" do
     # create a host user
     host_user = User.create(

@@ -19,8 +19,6 @@ describe "Request" do
         email: "evelyn@com",
         password: "password1"
       )
-      p guest_user.id
-      p space.id
       request = Request.create(user_id: guest_user.id, space_id: space.id, date: "11th April")
       expect(request).to be_a Request
     end
