@@ -13,3 +13,6 @@ before_script:
   - psql pinkbnb_test -U postgres -c 'CREATE TABLE spaces (ID SERIAL PRIMARY KEY, name VARCHAR(100), description VARCHAR(400), price_per_night MONEY);'
   - psql pinkbnb_test -U postgres -c 'ALTER TABLE users ALTER COLUMN password TYPE VARCHAR(140);'
   - psql pinkbnb_test -U postgres -c 'ALTER TABLE spaces ADD COLUMN user_id INTEGER REFERENCES users (id);'
+  - psql pinkbnb_test -U postgres -c 'ALTER TABLE spaces
+    ADD start_date DATE,
+    ADD end_date DATE;'
