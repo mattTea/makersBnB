@@ -28,7 +28,6 @@ GEM
     pg (1.1.4)
     powerpack (0.1.2)
     public_suffix (3.0.3)
-    puma (3.12.1)
     rack (2.0.7)
     rack-protection (2.0.5)
       rack
@@ -80,7 +79,6 @@ DEPENDENCIES
   bcrypt
   capybara
   pg
-  puma
   rspec
   rubocop (= 0.56.0)
   selenium-webdriver
