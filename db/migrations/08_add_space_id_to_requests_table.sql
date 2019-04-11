@@ -1,0 +1,1 @@
+ALTER TABLE requests ADD COLUMN space_id INTEGER REFERENCES spaces (id);

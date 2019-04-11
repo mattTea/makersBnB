@@ -4,6 +4,7 @@ require 'sinatra/flash'
 
 require './lib/user'
 require './lib/space'
+require './lib/request'
 
 class PinkBnB < Sinatra::Base
   enable :sessions
@@ -52,6 +53,12 @@ class PinkBnB < Sinatra::Base
 
   get '/spaces/new' do
     erb :'spaces/new'
+  end
+
+  post '/requests/new' do
+    Request.create(user_id: session[:user_id], space_id: params[:space_id], date: params[:date])
+    flash[:notice] = "Thanks for your request"
+    redirect '/spaces'
   end
 
   run! if app_file == $0
