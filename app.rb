@@ -74,5 +74,9 @@ class PinkBnB < Sinatra::Base
     redirect '/spaces'
   end
 
+  get '/requests/approve' do
+    erb :'requests/approve'
+  end
+
   run! if app_file == $0
 end
