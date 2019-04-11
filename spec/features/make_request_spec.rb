@@ -36,7 +36,7 @@ feature "Make request" do
     click_button("Login")
     # make request
     click_button('Request')
-    fill_in("date", with: "11th April")
+    fill_in("request_date", with: "2019-04-06")
     click_button("Confirm")
 
     # expect confirmation of request

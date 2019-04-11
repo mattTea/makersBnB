@@ -11,7 +11,7 @@
     <p>Check in: <%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
     <p>Check out: <%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
     <form class="request-form" action="/requests/new" method="post">
-      <label>Request date: </label><input type="text" name="date">
+      <label>Request date: </label><input type="date" name="request_date" min="<%= @space.start_date %>" max="<%= @space.end_date %>">
       <input type="submit" value="Confirm">
     </form>
   </body>

@@ -69,7 +69,7 @@ class PinkBnB < Sinatra::Base
 
   post '/requests/new' do
     space = Space.find(id: session[:space_id])
-    Request.create(user_id: session[:user_id], space_id: space.id, date: params[:date])
+    Request.create(user_id: session[:user_id], space_id: space.id, date: params[:request_date])
     flash[:notice] = "Thanks for your request"
     redirect '/spaces'
   end
