@@ -1,62 +1,78 @@
 body {
   background-image: url("https://images.unsplash.com/photo-1519160558534-579f5106e43f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80");
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-size: auto;
   height: 100%;
   background-position: center;
   background-size: cover;
+  font-size: 18px;
+  /* width: 100% */
 }
 
+.container {
+  background-color: rgb(128, 128, 128, 0.75);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5rem;
+  max-width: 600px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
 
 .page-header {
+  background-color: rgb(90, 133, 186, 0.5);
   color: white;
-  padding-top: 50px;
-  padding-right: 30px;
-  padding-bottom: 50px;
-  padding-left: 80px;
-  margin: 20px auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: auto;
+  text-align: center;
 }
 
 h1 {
   display: inline;
-  border-style: inset;
 }
 
-.signupbutton {
-  background-color: grey;
-  border: none;
+button {
+  background-color: rgb(41, 152, 41);
+  border-radius: 0.5rem;
+  border-style: none;
   color: white;
-  padding: 20px 34px;
+  font-size: 16px;
+  padding: 0.5rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  width: 100%;
+}
+
+.flash-notice {
+  background-color: salmon;
+  color: white;
+  font-size: 12;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
-  margin: 4px 2px;
-  cursor: pointer;
-  position: absolute;
-  left: 100px;
-  bottom: 10px;
-  width: 300px;
 }
 
-.log-in {
-  color: white;
-  background-color: grey;
-  cursor: pointer;
-  position: absolute;
-  right: 100px;
-  width: 300px;
+input {
+  border-style: none;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .form-details {
   margin: 4px 2px;
 }
 
+::placeholder {
+  font-size: 14px;
+  padding: 5px;
+}
+
 .sign-up-form {
-  position: absolute;
-  left: 200px;
-  bottom: 350px;
-  width: 300px;
+  padding: 2rem;
+}
+
+.login-form {
+  padding: 2rem;
 }
 
 .notAMember {
@@ -66,9 +82,3 @@ h1 {
 .member {
   color: white;
 }
-
-/* .homepage-photo {
-  position: absolute;
-  right: 500px;
-  bottom: 20px;
-} */
