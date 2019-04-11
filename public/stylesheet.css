@@ -15,6 +15,7 @@ body {
   display: flex;
   justify-content: space-around;
   margin-top: 5rem;
+  margin-bottom: 5rem;
   max-width: 600px;
   padding-left: 3rem;
   padding-right: 3rem;
@@ -29,6 +30,15 @@ body {
   text-align: center;
 }
 
+.sub-header {
+  background-color: rgb(250, 128, 114, 0.5);
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: auto;
+  text-align: center;
+}
+
 h1 {
   display: inline;
 }
@@ -39,6 +49,7 @@ button {
   border-style: none;
   color: white;
   font-size: 16px;
+  margin-top: 1rem;
   padding: 0.5rem;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
@@ -59,7 +70,8 @@ input {
 }
 
 .form-details {
-  margin: 4px 2px;
+  /* margin: 4px 2px; */
+  width: 100%;
 }
 
 ::placeholder {
@@ -75,10 +87,28 @@ input {
   padding: 2rem;
 }
 
+.new-space-form {
+  padding: 2rem;
+  width: 100%
+}
+
 .notAMember {
   color: white;
 }
 
 .member {
   color: white;
+}
+
+label {
+  color: white;
+  margin-bottom: -1rem;
+  margin-top: 0.5rem;
+}
+
+.date-picker {
+  color: grey;
+  font-size: 14px;
+  padding: 5px;
+  width: 100%;
 }
