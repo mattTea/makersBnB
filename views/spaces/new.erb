@@ -2,22 +2,56 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="/stylesheet.css">
     <title>PinkBnB</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/stylesheet.css">
   </head>
 
   <body>
-    <div>
-    <h2>Add a space</h2>
-
-    <form action="/spaces/new" method="post">
-      <p><label>Name: </label><input type="text" name="name" placeholder="Name"></p>
-      <p><label>Description: </label><textarea name="description" rows="8" cols="80" placeholder="Description"></textarea></p>
-      <p><label>Price per night: </label><input type="price" name="price_per_night" placeholder="Price per night"></p>
-      <p><label>Available from: </label><input type="date"name="start_date"></p>
-      <p><label>Available until: </label><input type="date" name="end_date"></p>
-      <input type="submit" value="Add">
-    </form>
+    <div class="page-header">
+      <h1>Pink BnB</h1>
+    </div>
+    <div class="sub-header">
+      <h2>Add a space</h2>
+    </div>
+    <div class="container">
+      <form class="new-space-form" action="/spaces/new" method="post">
+        <div>
+          <label>Name</label>
+        </div>
+        <div>
+          <input class="form-details" type="text" name="name" placeholder="Name">
+        </div>
+        <div>
+          <label>Description</label>
+        </div>
+        <div>
+          <textarea class="form-details" name="description" rows="5" cols="45" placeholder="Description"></textarea>
+        </div>
+        <div>
+          <label>Price per night</label>
+        </div>
+        <div>
+          <input class="form-details" type="price" name="price_per_night" placeholder="Price per night">
+        </div>
+        <div>
+          <label>Available from</label>
+        </div>
+        <div>
+          <input class="date-picker" type="date"name="start_date">
+        </div>
+        <div>
+          <label>Available until</label>
+        </div>
+        <div>
+          <input class="date-picker" type="date" name="end_date">
+        </div>
+        <div>
+          <button>Add</button>
+        </div>
+      </form>
     </div>
   </body>
 </html>
