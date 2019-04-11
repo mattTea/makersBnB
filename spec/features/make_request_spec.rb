@@ -17,6 +17,8 @@ feature "Make request" do
     fill_in('name', with: 'Hilton')
     fill_in('description', with: 'Fancy hotel')
     fill_in('price_per_night', with: 100)
+    fill_in('start_date', with: '2019-04-04')
+    fill_in('end_date', with: '2019-04-10')
     click_button('Add')
 
     click_button('Logout')
@@ -33,9 +35,10 @@ feature "Make request" do
     fill_in("login_password", with: "password123")
     click_button("Login")
     # make request
+    fill_in("date", with: "11th April")
     click_button('Request')
 
     # expect confirmation of request
-    expect(page).to have_content "You have requested Hilton"
+    expect(page).to have_content "Thanks for your request"
   end
 end

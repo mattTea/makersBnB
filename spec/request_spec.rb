@@ -11,7 +11,7 @@ describe "Request" do
         password: "password123"
       )
       # create a space
-      space = Space.create(name: "Hilton", description: "Posh hotel", price: 100, user_id: host_user.id)
+      space = Space.create(name: "Hilton", description: "Posh hotel", price: 100, user_id: host_user.id, start_date: '2019-04-10', end_date: '2019-04-17')
       # create guest user
       guest_user = User.create(
         name: "Evelyn",

@@ -7,6 +7,7 @@
   </head>
 
   <body>
+  <%= flash[:notice] %>
   <div>
     <% if @user %>
       <h1>Where do you want to stay, <%= @user.name.capitalize %>?</h1>
@@ -25,6 +26,12 @@
       <% end %>
       <p>Available from: <%= Date.parse(space.start_date).strftime("%-d %B %Y") %></p>
       <p>Available until: <%= Date.parse(space.end_date).strftime("%-d %B %Y") %></p>
+      
+      <form action="/requests/new" method="post">
+        <label>Request date: </label><input type="text" name="date">
+        <input type="text" name="space_id" value="<%= space.id %>" hidden>
+        <input type="submit" value="Request">
+      </form>
     <% end %>
   </div>
 
