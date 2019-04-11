@@ -12,12 +12,14 @@ describe Space do
         email: "georgie@com",
         password: "password123"
       )
-      space = Space.create(name: "Hilton", description: "Posh hotel", price: 100, user_id: user.id)
+      space = Space.create(name: "Hilton", description: "Posh hotel", price: 100, start_date: '2019-04-10', end_date: '2019-04-17', user_id: user.id)
 
       expect(space).to be_a Space
       expect(space.name).to eq "Hilton"
       expect(space.description).to eq "Posh hotel"
       expect(space.price).to eq("$100.00")
+      expect(space.start_date).to eq('2019-04-10')
+      expect(space.end_date).to eq('2019-04-17')
     end
   end
 
@@ -29,9 +31,9 @@ describe Space do
         email: "georgie@com",
         password: "password123"
       )
-      Space.create(name: "Hilton", description: "Posh hotel", price: 100, user_id: user.id)
-      Space.create(name: "Travelodge", description: "Less posh hotel", price: 50, user_id: user.id)
-      Space.create(name: "Evelyn house", description: "Lovely place", price: 200, user_id: user.id)
+      Space.create(name: "Hilton", description: "Posh hotel", price: 100, start_date: '2019-04-10', end_date: '2019-04-17', user_id: user.id)
+      Space.create(name: "Travelodge", description: "Less posh hotel", price: 50, start_date: '2019-04-10', end_date: '2019-04-17', user_id: user.id)
+      Space.create(name: "Evelyn house", description: "Lovely place", price: 200, start_date: '2019-04-10', end_date: '2019-04-17', user_id: user.id)
 
       spaces = Space.all
 

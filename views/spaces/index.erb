@@ -23,6 +23,8 @@
         <p>Host: <%= host.username %></p>
         <% end %>
       <% end %>
+      <p>Available from: <%= Date.parse(space.start_date).strftime("%-d %B %Y") %></p>
+      <p>Available until: <%= Date.parse(space.end_date).strftime("%-d %B %Y") %></p>
     <% end %>
   </div>
 
