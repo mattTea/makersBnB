@@ -11,7 +11,7 @@ feature "Make request" do
     fill_in("login_username", with: "georgie")
     fill_in("login_password", with: "password123")
     click_button("Login")
-    
+
     # create a space
     click_button("Add space")
     fill_in('name', with: 'Hilton')
@@ -22,7 +22,7 @@ feature "Make request" do
     click_button('Add')
 
     click_button('Logout')
-    
+
     # create guest user
     guest_user = User.create(
       name: "Evelyn",
@@ -35,8 +35,9 @@ feature "Make request" do
     fill_in("login_password", with: "password123")
     click_button("Login")
     # make request
-    fill_in("date", with: "11th April")
     click_button('Request')
+    fill_in("date", with: "11th April")
+    click_button("Confirm")
 
     # expect confirmation of request
     expect(page).to have_content "Thanks for your request"

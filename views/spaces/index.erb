@@ -26,13 +26,13 @@
       <% end %>
       <p>Available from: <%= Date.parse(space.start_date).strftime("%-d %B %Y") %></p>
       <p>Available until: <%= Date.parse(space.end_date).strftime("%-d %B %Y") %></p>
-      
-      <form action="/requests/new" method="post">
-        <label>Request date: </label><input type="text" name="date">
+
+      <form action="/requests" method="post">
         <input type="text" name="space_id" value="<%= space.id %>" hidden>
         <input type="submit" value="Request">
       </form>
-    <% end %>
+      <% end %>
+
   </div>
 
   <form action="/sessions/destroy" method="post">
