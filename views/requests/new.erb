@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p>Name: <%= @space.name %></p>
+    <p>Description: <%= @space.description %></p>
+    <p>Price per night: <%= @space.price %></p>
+    <p>Check in: <%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
+    <p>Check out: <%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
+    <form class="request-form" action="/requests/new" method="post">
+      <label>Request date: </label><input type="text" name="date">
+      <input type="submit" value="Confirm">
+    </form>
+  </body>
+</html>

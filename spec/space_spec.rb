@@ -42,4 +42,23 @@ describe Space do
       expect(spaces.first.name).to eq 'Hilton'
     end
   end
+
+  describe '.find' do
+    it 'returns a user when given a user_id' do
+      user = User.create(
+        name: "George",
+        username: "georgie",
+        email: "georgie@com",
+        password: "password123"
+      )
+      space = Space.create(name: "Hilton", description: "Posh hotel", price: 100, start_date: '2019-04-10', end_date: '2019-04-17', user_id: user.id)
+      result = Space.find(id: space.id)
+      expect(result.id).to eq space.id
+      expect(result.name).to eq space.name
+    end
+
+    it 'returns nil when no id is given' do
+      expect(Space.find(id: nil)).to eq nil
+    end
+  end
 end

@@ -55,8 +55,21 @@ class PinkBnB < Sinatra::Base
     erb :'spaces/new'
   end
 
+  post '/requests' do
+    session[:space_id] = params[:space_id]
+    @space_id = session[:space_id]
+    p session[:space_id]
+    redirect '/requests/new'
+  end
+
+  get '/requests/new' do
+    @space = Space.find(id: session[:space_id])
+    erb :'requests/new'
+  end
+
   post '/requests/new' do
-    Request.create(user_id: session[:user_id], space_id: params[:space_id], date: params[:date])
+    space = Space.find(id: session[:space_id])
+    Request.create(user_id: session[:user_id], space_id: space.id, date: params[:date])
     flash[:notice] = "Thanks for your request"
     redirect '/spaces'
   end
