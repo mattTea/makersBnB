@@ -10,14 +10,17 @@
       <div>
         <%= flash[:notice] %>
       </div>
-      <% @spaces.each do |space| %>
-      <h4>Name: <%= space.name %></h4>
-      <p>Date: <%= @requests[@spaces.index(space)].date %>
-      <form action="/requests/approve/<%= @requests[@spaces.index(space)].id %>" method="post">
-        <!-- <input type="hidden" name="_method" value="PATCH"> -->
-        <button type="submit">Approve</button>
-      </form>
-      <% end %>
+      <div>
+        <% @spaces.each do |space| %>
+          <h4>Name: <%= space.name %></h4>
+          <label>Date</label><%= @requests[@spaces.index(space)].date %>
+          <form action="/requests/approve/<%= @requests[@spaces.index(space)].id %>" method="post">
+            <input type="text" name="request_id" value="<%= @requests[@spaces.index(space)].id %>" hidden>
+            <input type="hidden" name="_method" value="PATCH">
+            <button type="submit">Approve</button>
+          </form>
+        <% end %>
+      </div>
     </div>
   </body>
 </html>

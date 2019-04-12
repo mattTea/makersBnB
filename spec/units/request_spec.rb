@@ -49,4 +49,24 @@ describe "Request" do
       expect(requests.first.space_id).to eq space.id
     end
   end
+
+  describe ".approve" do
+    it "approves a request" do
+      host_user = User.create(
+        name: "George",
+        username: "georgie",
+        email: "georgie@com",
+        password: "password123"
+      )
+      space = Space.create(name: "Hilton", description: "Posh hotel", price: 100, user_id: host_user.id, start_date: '2019-04-10', end_date: '2019-04-17')
+      guest_user = User.create(
+        name: "Evelyn",
+        username: "evelyn",
+        email: "evelyn@com",
+        password: "password1"
+      )
+      request = Request.create(user_id: guest_user.id, space_id: space.id, date: "2019-04-12")
+      expect(Request.approve(id: request.id).approved).to eq "t"
+    end
+  end
 end

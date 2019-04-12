@@ -7,7 +7,6 @@ require './lib/space'
 require './lib/request'
 
 class PinkBnB < Sinatra::Base
-
   enable :sessions, :method_override
 
   register Sinatra::Flash
@@ -83,10 +82,10 @@ class PinkBnB < Sinatra::Base
     erb :'requests/approve'
   end
 
-  post '/requests/approve/:id' do
-    p params[:id]
+  patch '/requests/approve/:id' do
     flash[:notice] = "Approved!"
-    redirect '/requests/approve'
+    Request.approve(id: params[:id])
+    # redirect '/requests/approve'
   end
 
   run! if app_file == $0
