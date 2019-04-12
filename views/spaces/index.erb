@@ -7,9 +7,11 @@
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <title>PinkBnB</title>
   </head>
-
   <body>
+
+    <div class="flash-notice">
   <%= flash[:notice] %>
+    </div>
   <div class="welcome">
     <% if @user %>
       <h1>Where do you want to stay, <%= @user.name.capitalize %>?</h1>
