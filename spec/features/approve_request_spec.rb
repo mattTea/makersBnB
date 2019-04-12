@@ -19,7 +19,7 @@ feature "Approve request" do
 
     click_button('Request')
     fill_in("request_date", with: "2019-04-06")
-    click_button("Confirm")
+    click_button("Request")
 
     click_button('Logout')
 
@@ -28,7 +28,7 @@ feature "Approve request" do
     fill_in("login_password", with: "password123")
     click_button("Login")
 
-    click_button("Review requests")
+    click_button("Review my requests")
     expect(page).to have_content("Your requests")
     expect(page).to have_content("Hilton")
     expect(page).to have_content("2019-04-06")

@@ -22,7 +22,7 @@ feature "Make request" do
     # make request
     click_button('Request')
     fill_in("request_date", with: "2019-04-06")
-    click_button("Confirm")
+    click_button("Request")
 
     # expect confirmation of request
     expect(page).to have_content "Thanks for your request"

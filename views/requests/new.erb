@@ -8,53 +8,59 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/stylesheet.css">
   </head>
+  
   <body>
     <div class="page-header">
       <h1>Pink BnB</h1>
     </div>
     <div class="sub-header">
-      <h2>Request a date</h2>
+      <h2>Request a space</h2>
     </div>
 
     <div class="container-column">
-      <div>
-        <label>Name:</label>
-        <div class="space-details-request"><%= @space.name %></div>
+      <div class="request-space">
+        <div>
+          <label>Name</label>
+        </div>
+        <div>
+          <%= @space.name %>
+        </div>
+        <div>
+          <label>Description:</label>
+        </div>
+        <div>
+          <%= @space.description %>
+        </div>
+        <div>
+          <label>Price per night</label>
+        </div>
+        <div>
+          <%= @space.price %>
+        </div>
+        <div>
+          <label>Available from</label>
+        </div>
+        <div>
+          <%= Date.parse(@space.start_date).strftime("%-d %B %Y") %>
+        </div>
+        <div>
+          <label>Available to</label>
+        </div>
+        <div>
+          <%= Date.parse(@space.end_date).strftime("%-d %B %Y") %>
+        </div>
+        <form action="/requests/new" method="post">
+          <div>
+            <label>Request date</label>
+          </div>
+          <div>
+            <input class="date-picker" type="date" name="request_date" min="<%= @space.start_date %>" max="<%= @space.end_date %>">
+          </div>
+          <div>
+            <button>Request</button>
+          </div>
+        </form>
       </div>
-      <div>
-        <label>Description:</label>
-        <div class="space-details-request"><%= @space.description %></div>
-      </div>
-      <div>
-
-      </div>
-
-
-
-      <div class="ppn-label-request">
-        Price per night:
-      </div>
-
-      <div class="ppn-request">
-        <%= @space.price %>
-      </div>
-
-      <div class="check-in-out-request">
-        Check in:
-      </div>
-
-      <p class="check-in-out-date"><%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
-
-      <div class="check-in-out-request">
-        Check out:
-      </div>
-
-       <p class="check-in-out-date"><%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
-
-      <form class="request-form" action="/requests/new" method="post">
-        <label>Request date: </label><input type="date" name="request_date" min="<%= @space.start_date %>" max="<%= @space.end_date %>">
-        <input type="submit" value="Confirm">
-      </form>
     </div>
   </body>
 </html>
