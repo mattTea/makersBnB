@@ -85,7 +85,7 @@ class PinkBnB < Sinatra::Base
   patch '/requests/approve/:id' do
     flash[:notice] = "Approved!"
     Request.approve(id: params[:id])
-    # redirect '/requests/approve'
+    redirect '/requests/approve'
   end
 
   run! if app_file == $0

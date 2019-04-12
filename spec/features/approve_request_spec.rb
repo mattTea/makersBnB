@@ -1,7 +1,7 @@
 require 'sign_in_helper'
 require 'guest_user_sign_in_helper'
 
-xfeature "Approve request" do
+feature "Approve request" do
   scenario "host user sees requests for their spaces" do
     create_user_and_sign_in
 
