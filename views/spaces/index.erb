@@ -15,6 +15,11 @@
   </div>
 
   <div>
+
+    <form action="/requests/approve">
+      <input type="submit" value="Review requests">
+    </form>
+
     <% @spaces.each do |space| %>
       <h4>Name: <%= space.name %></h4>
       <p>Description: <%= space.description %></p>

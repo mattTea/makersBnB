@@ -1,15 +1,6 @@
 feature 'create new space' do
   scenario 'user can enter details and space is created' do
-    user = User.create(
-      name: "George",
-      username: "georgie",
-      email: "georgie@com",
-      password: "password123"
-    )
-    visit "/"
-    fill_in("login_username", with: "georgie")
-    fill_in("login_password", with: "password123")
-    click_button("Login")
+    create_user_and_sign_in
     click_button("Add space")
     fill_in('name', with: 'Hilton')
     fill_in('description', with: 'Fancy hotel')
@@ -25,16 +16,7 @@ feature 'create new space' do
   end
 
   scenario 'link user id to space when creating new space' do
-    user = User.create(
-      name: "George",
-      username: "georgie",
-      email: "georgie@com",
-      password: "password123"
-    )
-    visit "/"
-    fill_in("login_username", with: "georgie")
-    fill_in("login_password", with: "password123")
-    click_button("Login")
+    create_user_and_sign_in
     click_button("Add space")
     fill_in('name', with: 'Hilton')
     fill_in('description', with: 'Fancy hotel')
