@@ -18,11 +18,11 @@
 
     <div class="container-column">
       <div>
-        <label>Name</label>
+        <label>Name:</label>
         <div class="space-details-request"><%= @space.name %></div>
       </div>
       <div>
-        <label>Description</label>
+        <label>Description:</label>
         <div class="space-details-request"><%= @space.description %></div>
       </div>
       <div>
@@ -50,7 +50,7 @@
       </div>
 
        <p class="check-in-out-date"><%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
-       
+
       <form class="request-form" action="/requests/new" method="post">
         <label>Request date: </label><input type="date" name="request_date" min="<%= @space.start_date %>" max="<%= @space.end_date %>">
         <input type="submit" value="Confirm">
