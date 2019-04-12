@@ -24,7 +24,7 @@ feature 'create new space' do
     fill_in('start_date', with: '2019-04-04')
     fill_in('end_date', with: '2019-04-10')
     click_button('Add')
-    expect(page).to have_content 'Host:'
+    expect(page).to have_content 'Host'
     expect(page).to have_content 'georgie'
   end
 end

@@ -6,7 +6,6 @@ body {
   background-position: center;
   background-size: cover;
   font-size: 18px;
-  /* width: 100% */
 }
 
 .container {
@@ -70,6 +69,15 @@ button {
   width: 100%;
 }
 
+.secondary-button {
+  background-color: rgb(55, 55, 58);
+}
+
+.tertiary-button {
+  background-color: rgb(153, 153, 155);
+  color: rgb(62, 62, 62);
+}
+
 .flash-notice {
   background-color: salmon;
   color: white;
@@ -84,7 +92,6 @@ input {
 }
 
 .form-details {
-  /* margin: 4px 2px; */
   width: 100%;
 }
 
@@ -102,6 +109,11 @@ input {
 }
 
 .new-space-form {
+  padding: 2rem;
+  width: 100%
+}
+
+.request-space {
   padding: 2rem;
   width: 100%
 }
@@ -148,23 +160,9 @@ label {
 }
 
 .welcome {
-  color: white;
-  font-family: 'Allerta', Helvetica, Arial, sans-serif;
-  line-height: 50px;
-}
-
-.space-details-request {
-  font-family: 'Allerta', Helvetica, Arial, sans-serif;
-  font-weight: 600;
-}
-
-.ppn-label-request {
-  color: white;
-}
-
-.ppn-request {
-  font-family: 'Allerta', Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  color: rgb(39, 60, 91);
+  padding-top: 2rem;
+  text-align: center;
 }
 
 .check-in-out-request {
