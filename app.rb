@@ -58,7 +58,6 @@ class PinkBnB < Sinatra::Base
   post '/requests' do
     session[:space_id] = params[:space_id]
     @space_id = session[:space_id]
-    p session[:space_id]
     redirect '/requests/new'
   end
 
@@ -75,6 +74,10 @@ class PinkBnB < Sinatra::Base
   end
 
   get '/requests/approve' do
+    @requests = Request.all_by_user(user_id: session[:user_id])
+    @spaces = @requests.map do |request|
+      Space.find(id: request.space_id)
+    end
     erb :'requests/approve'
   end
 

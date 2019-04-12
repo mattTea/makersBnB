@@ -1,16 +1,10 @@
+require 'sign_in_helper'
+require 'guest_user_sign_in_helper'
+
 feature "Make request" do
   scenario "user request a space for a date" do
     # create a host user
-    host_user = User.create(
-      name: "George",
-      username: "georgie",
-      email: "georgie@com",
-      password: "password123"
-    )
-    visit "/"
-    fill_in("login_username", with: "georgie")
-    fill_in("login_password", with: "password123")
-    click_button("Login")
+    create_user_and_sign_in
 
     # create a space
     click_button("Add space")
@@ -24,16 +18,7 @@ feature "Make request" do
     click_button('Logout')
 
     # create guest user
-    guest_user = User.create(
-      name: "Evelyn",
-      username: "evelyn",
-      email: "evelyn@com",
-      password: "password1"
-    )
-    visit "/"
-    fill_in("login_username", with: "georgie")
-    fill_in("login_password", with: "password123")
-    click_button("Login")
+    guest_user_sign_in
     # make request
     click_button('Request')
     fill_in("request_date", with: "2019-04-06")

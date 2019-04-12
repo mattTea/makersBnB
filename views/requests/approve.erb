@@ -1,1 +1,16 @@
-"Your requests"
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PinkBnB</title>
+  </head>
+  <body>
+    <h1>Your requests</h1>
+    <div>
+      <% @spaces.each do |space| %>
+      <h4>Name: <%= space.name %></h4>
+      <p>Date: <%= @requests[@spaces.index(space)].date %>
+      <% end %>
+    </div>
+  </body>
+</html>
