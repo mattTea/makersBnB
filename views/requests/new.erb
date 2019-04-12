@@ -18,22 +18,39 @@
 
     <div class="container-column">
       <div>
-        <label>Name</label>
-        <div><%= @space.name %></div>
+        <label>Name:</label>
+        <div class="space-details-request"><%= @space.name %></div>
       </div>
       <div>
-        <label>Description</label>
-        <div><%= @space.description %></div>
+        <label>Description:</label>
+        <div class="space-details-request"><%= @space.description %></div>
       </div>
       <div>
-        
+
       </div>
 
 
-      
-      <p>Price per night: <%= @space.price %></p>
-      <p>Check in: <%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
-      <p>Check out: <%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
+
+      <div class="ppn-label-request">
+        Price per night:
+      </div>
+
+      <div class="ppn-request">
+        <%= @space.price %>
+      </div>
+
+      <div class="check-in-out-request">
+        Check in:
+      </div>
+
+      <p class="check-in-out-date"><%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
+
+      <div class="check-in-out-request">
+        Check out:
+      </div>
+
+       <p class="check-in-out-date"><%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
+
       <form class="request-form" action="/requests/new" method="post">
         <label>Request date: </label><input type="date" name="request_date" min="<%= @space.start_date %>" max="<%= @space.end_date %>">
         <input type="submit" value="Confirm">

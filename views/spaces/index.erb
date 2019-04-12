@@ -2,17 +2,31 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Allerta" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <title>PinkBnB</title>
   </head>
-
   <body>
+
+    <div class="flash-notice">
   <%= flash[:notice] %>
-  <div>
+    </div>
+
+    <div class="page-header">
+      <h1>Pink BnB</h1>
+    </div>
+
+    <div class="sub-header">
+      <h1>Request a space</h1>
+    </div>
+  <div class="welcome">
     <% if @user %>
       <h1>Where do you want to stay, <%= @user.name.capitalize %>?</h1>
     <% end %>
   </div>
+
+  <div class="space-index">
 
   <div>
 
@@ -21,32 +35,52 @@
     </form>
 
     <% @spaces.each do |space| %>
-      <h4>Name: <%= space.name %></h4>
-      <p>Description: <%= space.description %></p>
-      <p>Price per night: <%= space.price %></p>
+      <h4>Name: </h4> <div class="space-attributes"><%= space.name %></div>
+      <h4>Description: </h4> <div class="space-attributes">
+        <%= space.description %></div>
+      <h4>Price per night: </h4><div class="space-attributes">
+      <%= space.price %></div>
       <% @possible_hosts.each do |host| %>
         <% if host.id == space.user_id %>
-        <p>Host: <%= host.username %></p>
+        <h4>Host: </h4> <div class="space-attributes">
+        <%= host.username %></div>
         <% end %>
       <% end %>
-      <p>Available from: <%= Date.parse(space.start_date).strftime("%-d %B %Y") %></p>
-      <p>Available until: <%= Date.parse(space.end_date).strftime("%-d %B %Y") %></p>
+      <h4>Available from: </h4><div class="space-attributes">
+        <%= Date.parse(space.start_date).strftime("%-d %B %Y") %>
+      </div>
+      <h4>Available until: </h4> <div class="space-attributes">
+        <%= Date.parse(space.end_date).strftime("%-d %B %Y") %></div>
 
       <form action="/requests" method="post">
         <input type="text" name="space_id" value="<%= space.id %>" hidden>
-        <input type="submit" value="Request">
+        <button>Request</button>
       </form>
       <% end %>
 
   </div>
 
-  <form action="/sessions/destroy" method="post">
-    <input type="submit" value="Logout">
-  </form>
+  </div>
+
+  <div class="add-space-logout">
+    <div class="become-a-host">
+        <h1>Become a Pink BnB host!</h1>
+    </div>
 
   <form action="/spaces/new">
-    <input type="submit" value="Add space">
+    <div class="form-details">
+      <button>Add space</button>
+    </div>
   </form>
+
+  <form action="/sessions/destroy" method="post">
+    <div class="form-details">
+      <button>Logout</button>
+    </div>
+
+  </form>
+
+  </div>
 
   </body>
 </html>

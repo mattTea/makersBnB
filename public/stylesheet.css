@@ -126,3 +126,63 @@ label {
   padding: 5px;
   width: 100%;
 }
+
+.space-index {
+  background-color: rgb(128, 128, 128, 0.75);
+  color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  max-width: 600px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.add-space-logout {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+}
+
+.welcome {
+  color: white;
+  font-family: 'Allerta', Helvetica, Arial, sans-serif;
+  line-height: 50px;
+}
+
+.space-details-request {
+  font-family: 'Allerta', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+
+.ppn-label-request {
+  color: white;
+}
+
+.ppn-request {
+  font-family: 'Allerta', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+
+.check-in-out-request {
+  color: white;
+}
+
+.check-in-out-date {
+  font-family: 'Allerta', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+
+.space-attributes {
+  font-family: 'Allerta', Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: black;
+}
+
+.become-a-host {
+  color: pink;
+  background-color: rgb(90, 133, 186, 0.5);
+}
