@@ -2,17 +2,21 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Allerta" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <title>PinkBnB</title>
   </head>
 
   <body>
   <%= flash[:notice] %>
-  <div>
+  <div class="welcome">
     <% if @user %>
       <h1>Where do you want to stay, <%= @user.name.capitalize %>?</h1>
     <% end %>
   </div>
+
+  <div class="space-index">
 
   <div>
     <% @spaces.each do |space| %>
@@ -35,13 +39,20 @@
 
   </div>
 
-  <form action="/sessions/destroy" method="post">
-    <input type="submit" value="Logout">
-  </form>
+  </div>
 
   <form action="/spaces/new">
     <input type="submit" value="Add space">
   </form>
+
+  <div class="logout">
+
+  <form action="/sessions/destroy" method="post">
+    <input type="submit" value="Logout">
+  </form>
+
+  </div>
+
 
   </body>
 </html>
