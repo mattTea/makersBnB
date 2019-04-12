@@ -1,5 +1,5 @@
 class Request
-  attr_reader :user_id, :space_id, :date
+  attr_reader :id, :user_id, :space_id, :date
 
   def initialize(id:, user_id:, space_id:, date:)
     @user_id = user_id

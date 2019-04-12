@@ -7,7 +7,9 @@ require './lib/space'
 require './lib/request'
 
 class PinkBnB < Sinatra::Base
-  enable :sessions
+
+  enable :sessions, :method_override
+
   register Sinatra::Flash
 
   get '/' do
@@ -79,6 +81,12 @@ class PinkBnB < Sinatra::Base
       Space.find(id: request.space_id)
     end
     erb :'requests/approve'
+  end
+
+  post '/requests/approve/:id' do
+    p params[:id]
+    flash[:notice] = "Approved!"
+    redirect '/requests/approve'
   end
 
   run! if app_file == $0

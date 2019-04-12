@@ -1,8 +1,8 @@
 require 'sign_in_helper'
 require 'guest_user_sign_in_helper'
 
-feature "Make request" do
-  scenario "user request a space for a date" do
+feature "Approve request" do
+  scenario "host user sees requests for their spaces" do
     create_user_and_sign_in
 
     click_button("Add space")
@@ -32,5 +32,8 @@ feature "Make request" do
     expect(page).to have_content("Your requests")
     expect(page).to have_content("Hilton")
     expect(page).to have_content("2019-04-06")
+
+    click_button("Approve")
+    expect(page).to have_content("Approved!")
   end
 end
