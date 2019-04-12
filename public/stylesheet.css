@@ -140,8 +140,11 @@ label {
   padding-right: 3rem;
 }
 
-.logout {
-  padding-left: 75rem;
+.add-space-logout {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
 }
 
 .welcome {
