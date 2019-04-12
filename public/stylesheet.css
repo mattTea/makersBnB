@@ -181,3 +181,8 @@ label {
   font-weight: 600;
   color: black;
 }
+
+.become-a-host {
+  color: pink;
+  background-color: rgb(90, 133, 186, 0.5);
+}
