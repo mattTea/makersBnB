@@ -2,17 +2,42 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>PinkBnB</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/stylesheet.css">
   </head>
   <body>
-    <p>Name: <%= @space.name %></p>
-    <p>Description: <%= @space.description %></p>
-    <p>Price per night: <%= @space.price %></p>
-    <p>Check in: <%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
-    <p>Check out: <%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
-    <form class="request-form" action="/requests/new" method="post">
-      <label>Request date: </label><input type="date" name="request_date" min="<%= @space.start_date %>" max="<%= @space.end_date %>">
-      <input type="submit" value="Confirm">
-    </form>
+    <div class="page-header">
+      <h1>Pink BnB</h1>
+    </div>
+    <div class="sub-header">
+      <h2>Request a date</h2>
+    </div>
+
+    <div class="container-column">
+      <div>
+        <label>Name</label>
+        <div><%= @space.name %></div>
+      </div>
+      <div>
+        <label>Description</label>
+        <div><%= @space.description %></div>
+      </div>
+      <div>
+        
+      </div>
+
+
+      
+      <p>Price per night: <%= @space.price %></p>
+      <p>Check in: <%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
+      <p>Check out: <%= Date.parse(@space.start_date).strftime("%-d %B %Y") %></p>
+      <form class="request-form" action="/requests/new" method="post">
+        <label>Request date: </label><input type="date" name="request_date" min="<%= @space.start_date %>" max="<%= @space.end_date %>">
+        <input type="submit" value="Confirm">
+      </form>
+    </div>
   </body>
 </html>

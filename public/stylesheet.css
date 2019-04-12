@@ -21,6 +21,20 @@ body {
   padding-right: 3rem;
 }
 
+.container-column {
+  background-color: rgb(128, 128, 128, 0.75);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  max-width: 600px;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
 .page-header {
   background-color: rgb(90, 133, 186, 0.5);
   color: white;
