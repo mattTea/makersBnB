@@ -130,8 +130,6 @@ So that my details are secure
 I want to be able to logout
 ```
 
-**HERE at end of WEDNESDAY**
-
 6. Range of dates
 
 ```
@@ -155,6 +153,8 @@ As a host,
 So that I can manage my space,
 I want to be able to approve a booking request
 ```
+
+_TODO the following_
 
 9. Availability update
 
